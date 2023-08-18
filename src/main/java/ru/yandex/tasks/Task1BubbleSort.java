@@ -7,14 +7,18 @@ import java.util.Arrays;
 
 public class Task1BubbleSort {
     public static ArrayList<Integer> sort(ArrayList<Integer> numbers) {
+
         for (int i = 0; i < numbers.size() - 2; ++i) {
+            int counter = 0;
             for(int j = 0; j < numbers.size() - i - 2; ++j){
-                if(numbers.get(j) > numbers.get(j + 1)){
+                if (numbers.get(j) > numbers.get(j + 1)) {
+                    counter += 1;
                     int tmp = numbers.get(j);
                     numbers.set(j, numbers.get(j + 1));
                     numbers.set(j + 1, tmp);
                 }
             }
+            if (counter == 0) break;
         }
         return numbers;
     }
